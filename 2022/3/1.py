@@ -10,6 +10,11 @@ for x in f:
     cc = ''.join(
         set(c1).intersection(c2)
     )
-    priority = ord(cc) -96
+    if cc.isupper() == True:
+        priority = ord(cc) - 38
+    else:
+        priority = ord(cc) - 96
     total = total + priority
+#    print(cc, priority)
+
 print(total)
