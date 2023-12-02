@@ -7,6 +7,7 @@ br = False
 f = open("data.txt", "r")
 
 for l in f:
+    
     for c in l:
         s.append(c)
 
@@ -18,12 +19,16 @@ for l in f:
             break
 
     for i in range(len(s)):
-        if s[(len(s) - 1) - i].isnumeric:
+        if s[(len(s) - 1) - i].isnumeric():
             b = s[(len(s) - 1) - i]
             br = True
+
             s = []
             break
     
-    t = int(str(a) + str(b))
+    print(a + "-" + b)
+    t += int(str(a) + str(b))
+    
+    print(t)
 
 print(t)
