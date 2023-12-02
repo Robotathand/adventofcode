@@ -11,7 +11,6 @@ for l in f:
     for c in l:
         s.append(c)
 
-        
     for i in range(len(s)):
         if s[int(i)].isnumeric():
             a = s[i]
@@ -26,9 +25,6 @@ for l in f:
             s = []
             break
     
-    print(a + "-" + b)
     t += int(str(a) + str(b))
-    
-    print(t)
 
 print(t)
