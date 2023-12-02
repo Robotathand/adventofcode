@@ -27,4 +27,5 @@ for l in f:
     
     t += int(str(a) + str(b))
 
+f.close()
 print(t)
