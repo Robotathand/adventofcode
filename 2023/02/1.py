@@ -6,7 +6,7 @@ split_line = []
 total = 0
 sc = ""
 
-file = open("./2023/02/data.txt", "r")
+file = open("./data.txt", "r")
 
 
 for line in file:
