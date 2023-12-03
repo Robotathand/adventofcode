@@ -1,33 +1,46 @@
-s = []
-br = False
-t = 0
+# answer from https://github.com/oliver-ni/advent-of-code/blob/master/py/2023/day02.py used to locate problem
+# problem: wored at the end of the line are "word\n"
+
+
+split_line = []
+total = 0
 sc = ""
 
-f = open("data.txt", "r")
+file = open("./2023/02/data.txt", "r")
 
-for l in f:
-    s = []
-    s = l.split(" ")
+
+for line in file:
+
+    split_line = line.split(" ")
     br = False
-    for i in range (len(s)):
-        if s[i] == "red," or s[i] == "red;" or s[i] == "red":
-            if int(s[i - 1]) > 12:
+
+    for i in range (len(split_line)):
+        token = split_line[i].strip()
+        print(token)
+
+        if token == "red," or split_line[i] == "red;" or split_line[i] == "red" or split_line[i] == "red\n":
+            if int(split_line[i - 1]) > 12:
                 br = True
-        elif s[i] == "green," or s[i] == "green;" or s[i] == "green":
-            if int(s[i - 1]) > 13:
+                break
+
+
+        elif split_line[i] == "green," or split_line[i] == "green;" or split_line[i] == "green" or split_line[i] == "green\n":
+            if int(split_line[i - 1]) > 13:
                 br = True
-        elif s[i] == "blue," or s[i] == "blue;" or s[i] == "blue":
-            if int(s[i - 1]) > 14:
+                break
+
+        elif split_line[i] == "blue," or split_line[i] == "blue;" or split_line[i] == "blue" or split_line[i] == "blue\n":
+            if int(split_line[i - 1]) > 14:
                 br = True
-        
-        print(s[i], "   ", s[i-1], "    ", br)
+                break
+
 
     if br == False:
-        sc = s[1]
-        sc = sc.rstrip(sc[-1])
-        t += int(sc)
-        print(sc)
+        sc = split_line[1].strip()
+        line_id = sc[:-1]
+        total += int(line_id)
 
-f.close()
 
-print(t)
+file.close()
+
+print(total)
