@@ -3,7 +3,7 @@ br = False
 t = 0
 sc = ""
 
-f = open("./data.txt", "r")
+f = open("data.txt", "r")
 
 for l in f:
     s = []
@@ -19,11 +19,14 @@ for l in f:
         elif s[i] == "blue," or s[i] == "blue;" or s[i] == "blue":
             if int(s[i - 1]) > 14:
                 br = True
+        
+        print(s[i], "   ", s[i-1], "    ", br)
 
     if br == False:
         sc = s[1]
         sc = sc.rstrip(sc[-1])
         t += int(sc)
+        print(sc)
 
 f.close()
 
