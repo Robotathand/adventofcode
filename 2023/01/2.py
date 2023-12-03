@@ -2,3 +2,7 @@
 
 st = ""
 
+f = open("./data.txt", "r")
+
+for l in f:
+    st = l
