@@ -29,5 +29,5 @@ fn main() {
         total += item1 * count;
     }
 
-    println!("{total}")
+    println!("{total}");
 }
