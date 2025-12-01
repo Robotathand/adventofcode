@@ -1,4 +1,4 @@
-use std::{fs};
+use std::fs;
 
 fn main() {
     let data = fs::read_to_string("../data.txt").expect("Can't read");
@@ -23,7 +23,7 @@ fn main() {
         if digit == 0 {
             total += 1;
         }
-        
+
         // println!("{} {} {} {}", line, length, digit, total)
     }
     println!("{}", total)
