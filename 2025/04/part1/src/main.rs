@@ -6,9 +6,9 @@ fn main() {
         .lines()
         .map(|l| {
             l.chars()
-                .map(|c| c.to_digit(10).unwrap())
-                .collect::<Vec<u32>>()
+                .map(|c| if c == '@' { 1 } else { 0 })
+                .collect::<Vec<i32>>()
         })
-        .collect::<Vec<Vec<u32>>>();
-    println!("{:?}", grid);
+        .collect::<Vec<Vec<i32>>>();
+    let mut access = vec![vec![0; grid.len()]; grid[0].len()];
 }
